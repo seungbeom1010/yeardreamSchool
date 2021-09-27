@@ -9,7 +9,7 @@ def main():
     if (((request % 250) % 40) % 10) != 0:
         print(-1)
     
-    if (((request % 250) % 40) % 10) == 0:
+   else:
         
         if request > 250:
             protein += request // 250
