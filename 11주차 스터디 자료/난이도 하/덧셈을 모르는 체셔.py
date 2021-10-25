@@ -6,3 +6,5 @@ elif int(n[-2:]) == 10:
     print(int(n[:-2]) + 10)
 else:
     print(int(n[:-1]) + int(n[-1]))
+
+# commit변경
