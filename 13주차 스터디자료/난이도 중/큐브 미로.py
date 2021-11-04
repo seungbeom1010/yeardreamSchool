@@ -1,11 +1,18 @@
-from collections import deque
-# 작업 중
-queue = deque()
-n, m = list(map(int, input().split()))
+from sys import stdin
 
-adj = [[] for _ in range(n)]
-for _ in range(m):
-    src, dest = map(int, input().split())
-    adj[src].append(dest)
-    adj[dest].append(src)
+l, r, c = map(int, stdin.readline().split())
+
+cube = []
+
+for i in range(c):
+    maze = []
+    for j in range(r + 1):
+        m = list(map(str, stdin.readline().split()))
+        if not m:
+            continue
+        elif '0' in m:
+            break
+        else:
+            maze.append(m)
+    cube.append(maze)
 

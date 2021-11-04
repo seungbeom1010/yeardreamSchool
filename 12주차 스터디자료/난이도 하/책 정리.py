@@ -1,15 +1,15 @@
-n_book = int(input())
-books = [int(x) for x in input().split()]
+from bisect import bisect_left
 
-sorted_books = []
-count = 0
+n = int(input())
+book = list(map(int, input().split()))
 
-for i in range(1, n_book+1):
-    if books.index(i) == i - 1:
-        continue
+dp = [0]
+for i in book:
+    if dp[-1] < i:
+        dp.append(i)
+
     else:
-        count += 1
-        del books[books.index(i)]
-        books.insert(i-1, i)
+        dp[bisect_left(dp, i)] = i
 
-print(count)
+
+print(n - (len(dp) - 1))
